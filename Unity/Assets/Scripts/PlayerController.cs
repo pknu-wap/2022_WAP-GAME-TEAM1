@@ -34,6 +34,13 @@ public class PlayerController : MonoBehaviour
     {
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRB.velocity.y);
 
+        //Get var for hoizontal and Not Using Flip By Renderer,but rotate 180.
+        //This rotation will be used when firing bullet.
+        var movement = Input.GetAxis("Horizontal");
+        if (!Mathf.Approximately(0, movement))
+            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+
+
         Bounds bounds = capsuleCollider2D.bounds;
 
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
@@ -55,15 +62,6 @@ public class PlayerController : MonoBehaviour
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce * 0.8f);
                 canDoubleJump = false;
             }
-        }
-
-        if (theRB.velocity.x < 0)
-        {
-            theSR.flipX = true;
-        }
-        else
-        {
-            theSR.flipX = false;
         }
 
         anim.SetBool("isGrounded", isGrounded);
