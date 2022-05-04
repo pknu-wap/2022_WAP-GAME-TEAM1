@@ -20,7 +20,7 @@ public class Spike : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.SetActive(false);
+            GameManager.instance.isDead = true;
         }
     }
 }

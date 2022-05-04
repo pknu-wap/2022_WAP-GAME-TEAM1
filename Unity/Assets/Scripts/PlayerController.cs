@@ -66,8 +66,15 @@ public class PlayerController : MonoBehaviour
             theSR.flipX = false;
         }
 
+        if (GameManager.instance.isDead)
+        {
+            gameObject.SetActive(false);
+        }
+
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("canDoubleJump", canDoubleJump);
+
+      
     }
 }
