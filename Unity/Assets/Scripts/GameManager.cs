@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public bool isDead;
+
     private void Awake()
     {
         instance = this;
@@ -12,17 +15,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        isDead = false;
     }
 
     
     void Update()
     {
         
-    }
-
-    public void PlayerDie()
-    {
-
     }
 }
