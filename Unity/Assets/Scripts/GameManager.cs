@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             showDead = true;
             GameObject objUIGameOver = Instantiate(UIGameOver);
+            objUIGameOver.transform.position = new Vector3(0,0,-1);
         }
     }
 }
