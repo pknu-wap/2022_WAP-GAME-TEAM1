@@ -2,22 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggeredmovingObject : Spike
+public class TriggeredmovingObject : Trap
 {
-    public static TriggeredmovingObject instance;
     public float moveSpeed;
     public bool isTriggered;
-    public float rayDistance;
 
     [SerializeField]
     private Transform targetPos;
-  
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     void Start()
     {
@@ -28,23 +19,34 @@ public class TriggeredmovingObject : Spike
     
     void Update()
     {
-        Physics2D.queriesStartInColliders = false;
-        if (!isTriggered)
-        {
+        //Physics2D.queriesStartInColliders = false;
+        //if (!isTriggered)
+        //{
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, targetPos.position - transform.position, rayDistance, 1 << LayerMask.NameToLayer("Player"));
+        //    RaycastHit2D hit = Physics2D.Raycast(transform.position, targetPos.position - transform.position, rayDistance, 1 << LayerMask.NameToLayer("Player"));
 
-            Debug.DrawRay(transform.position, Vector2.up * rayDistance, Color.red);
+        //    Debug.DrawRay(transform.position, Vector2.up * rayDistance, Color.red);
 
-            if (hit.transform != null)
-            {
-                isTriggered = true;
-            }
-        }
+        //    if (hit.transform != null)
+        //    {
+        //        isTriggered = true;
+        //    }
+        //}
 
+        // 트리거되면 targetPos쪽으로 moveSpeed속도로 움직임.
         if (isTriggered)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos.position, moveSpeed * Time.deltaTime);
+            
         }
+    }
+
+    // 설정한 영역에 닿으면 Trigger변수를 true해서 트랩 동작
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !isTriggered)
+        {
+            isTriggered = true;
+        }    
     }
 }
