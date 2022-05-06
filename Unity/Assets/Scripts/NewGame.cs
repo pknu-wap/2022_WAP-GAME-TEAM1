@@ -7,7 +7,7 @@ public class NewGame : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("Start_Map1");
+        SceneManager.LoadScene("Map1");
     }
 
 }
