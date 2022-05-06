@@ -518,7 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e653c1e86fc5ce4abbb3b5d50052dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIGameOver: {fileID: 2470237194407722801, guid: 3366bd65b0b40ab4696a8a402a5491c3, type: 3}
   isDead: 0
+  showDead: 0
 --- !u!4 &43056230
 Transform:
   m_ObjectHideFlags: 0
