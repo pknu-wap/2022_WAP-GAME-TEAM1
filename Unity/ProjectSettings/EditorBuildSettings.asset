@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 2f7b699f4eb24854782f987d1e04c2c9
   - enabled: 1
-    path: Assets/Scenes/Start_Map1.unity
+    path: Assets/Scenes/qwe.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
