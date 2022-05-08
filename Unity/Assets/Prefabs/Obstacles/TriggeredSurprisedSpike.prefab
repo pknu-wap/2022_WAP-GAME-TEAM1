@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5902331346968102422}
   - component: {fileID: 6429911819292769222}
   - component: {fileID: 6429911819292769223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TriggeredSurprisedSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}

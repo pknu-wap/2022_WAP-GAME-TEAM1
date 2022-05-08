@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8086755763314915911}
   - component: {fileID: 8713062475619256214}
   - component: {fileID: 4567181801920388183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TriggeredMovingSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8713062474366180187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: targetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

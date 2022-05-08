@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5909145580548643321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: targetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 6544690362495039717}
   - component: {fileID: 1552447842035818229}
   - component: {fileID: 3092429988876180926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TriggeredMovingSurprisedPierceSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
