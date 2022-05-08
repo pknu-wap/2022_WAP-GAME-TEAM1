@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     //애니메이터
     private Animator anim;
 
+    //�÷��̾� ���� ����Ʈ
+    public GameObject deadEffect;
+
 
     void Start()
     {
@@ -95,6 +98,8 @@ public class PlayerController : MonoBehaviour
         //죽음관련 컨트롤 죽음 변수는 GameManager에서 컨트롤
         if (GameManager.instance.isDead)
         {
+            SoundManager.instance.PlaySFX(1);
+            Instantiate(deadEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
             GameManager.instance.isDead = false;
             GameObject objUIGameOver = Instantiate(UIGameOver);
