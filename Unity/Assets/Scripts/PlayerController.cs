@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                SoundManager.instance.PlaySFX(0);
                 
             }
             // canDoubleJump가 true면 공중에서 점프 한번 더 가능.
