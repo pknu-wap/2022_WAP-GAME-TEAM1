@@ -31,8 +31,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer theSR;
     //애니메이터
     private Animator anim;
-
-    //�÷��̾� ���� ����Ʈ
+    //플레이어 죽음 이펙트
     public GameObject deadEffect;
 
 
@@ -76,24 +75,16 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                
             }
             // canDoubleJump가 true면 공중에서 점프 한번 더 가능.
             else if (canDoubleJump)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce * 0.8f);
                 canDoubleJump = false;
+                SoundManager.instance.PlaySFX(0);
             }
         }
-
-        if (theRB.velocity.x < 0)
-        {
-            theSR.flipX = true;
-        }
-        else if (theRB.velocity.x > 0)
-        {
-            theSR.flipX = false;
-        }
-
 
         //죽음관련 컨트롤 죽음 변수는 GameManager에서 컨트롤
         if (GameManager.instance.isDead)
