@@ -19,8 +19,12 @@ public class Player_Attack : MonoBehaviour
         if(curtime<=0)
         {
             //Shift to Fire Bullet
-            if (Input.GetKey(KeyCode.LeftShift)) 
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                SoundManager.instance.PlaySFX(2);
                 Instantiate(bullet, pos.position, transform.rotation);
+            }
+                
 
             curtime = cooltime;
         }

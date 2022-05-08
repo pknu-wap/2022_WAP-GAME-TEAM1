@@ -49,9 +49,12 @@ public class PlayerController : MonoBehaviour
 
         //플레이어의 좌우반전을 y축 회전을 이용하여 구현
         //총알 발사시에 rotation에 맞는 방향으로 발사하기 위해서
-        var movement = Input.GetAxis("Horizontal");
-        if (!Mathf.Approximately(0, movement))
-            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        // var movement = Input.GetAxis("Horizontal");
+        //if (!Mathf.Approximately(0, movement))
+        if (theRB.velocity.x > 0)
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        else if (theRB.velocity.x < 0)
+            transform.eulerAngles = new Vector3(0, 180, 0);
 
         // capsuleCollider의 min, max, center등의 위치 정보를 나타냄
         Bounds bounds = capsuleCollider2D.bounds;

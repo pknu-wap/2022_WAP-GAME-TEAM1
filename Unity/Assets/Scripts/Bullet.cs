@@ -5,12 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D theRB;
     public float distance;
     public LayerMask isLayer;
     void Start()
     {
-        Invoke("BulletOff", 2); //2檬 第俊 Bullet 家戈.
+        Invoke("BulletOff", 2f); //2檬 第俊 Bullet 家戈.
     }
 
     void Update() {
