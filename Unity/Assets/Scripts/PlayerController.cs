@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject UIGameOver;
+
     [SerializeField]
     private float moveSpeed; 
     [SerializeField]
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
             GameManager.instance.isDead = false;
+            GameObject objUIGameOver = Instantiate(UIGameOver);
+            objUIGameOver.transform.position = new Vector3(0,0,-1);
         }
         
         anim.SetBool("isGrounded", isGrounded);

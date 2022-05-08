@@ -5,10 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject UIGameOver;
 
     public bool isDead;
-    public bool showDead;
 
     private void Awake()
     {
@@ -18,17 +16,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isDead = false;
-        showDead = false;
     }
 
     
     void Update()
     {
-        if (isDead && !showDead) //죽었을 때 한번만 작동
-        {
-            showDead = true;
-            GameObject objUIGameOver = Instantiate(UIGameOver);
-            objUIGameOver.transform.position = new Vector3(0,0,-1);
-        }
     }
 }
