@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     // groundLayer 판단
     private LayerMask groundLayer;
+    // MovingPlatformLayer 판단
+    private LayerMask MovingPlatformLayer;
     // 캡슐 콜라이더 
     private CapsuleCollider2D capsuleCollider2D;
     //발이 땅에 닿아있는지 여부 판단
@@ -55,10 +57,10 @@ public class PlayerController : MonoBehaviour
         
         //발의 포지션은 콜라이더 범위의 x축 중간, y축 최소 값.
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
-      
+
         // footPosition의 지름 0.1범위 가상의 원 범위를 설정해서 이 범위가 groundLayer에 닿아있으면 true를 반환
-        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer);
-       
+        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer) || Physics2D.OverlapCircle(footPosition, 0.1f, MovingPlatformLayer);
+
         //땅에 닿아있으면 2단 점프 가능 여부 초기화
         if (isGrounded)
         {
