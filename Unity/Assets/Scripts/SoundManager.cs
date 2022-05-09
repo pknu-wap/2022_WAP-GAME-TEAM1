@@ -17,18 +17,10 @@ public class SoundManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
+        else
+            Destroy(this.gameObject);
     }
 
     public void PlaySFX(int soundToPlay)

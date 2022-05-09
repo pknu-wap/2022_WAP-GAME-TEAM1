@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tilemap
   - MovingPlatform
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Obstacle
   - MovingPlatform
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2974965525
     locked: 0
   - name: Ground
     uniqueID: 207325693

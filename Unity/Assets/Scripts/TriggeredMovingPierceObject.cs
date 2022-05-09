@@ -21,10 +21,7 @@ public class TriggeredMovingPierceObject : Trap
         if (isTriggered)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos.position, moveSpeed * Time.deltaTime);
-            if (transform.position.y > 20.0f || transform.position.y < -20.0f || transform.position.x > 20.0f || transform.position.x < -20.0f)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject, 3f);
         }
     }
 
