@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
             isSpawning = false;
             PlayerController.instance.transform.position = CheckPointManager.instance.spawnPoint;
             PlayerController.instance.gameObject.SetActive(true);
+            SoundManager.instance.PlayBGM(SoundManager.instance.nowPlayingBGMIndex);
         }
     }
 

@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour
             //GameManager.instance.isDead = false;
             GameObject objUIGameOver = Instantiate(UIGameOver);
             objUIGameOver.transform.position = new Vector3(0,0,-1);
+            SoundManager.instance.PlayGameOver();
         }
 
         //애니메이션 세팅

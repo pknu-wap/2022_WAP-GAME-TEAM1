@@ -9,6 +9,8 @@ public class Player_Attack : MonoBehaviour
     public float cooltime;
     private float curtime;
 
+    public GameObject parent;
+
     //ÃÑ¾Ë Object pool
     private List<Bullet> bulletPool = new List<Bullet>();
 
@@ -25,7 +27,7 @@ public class Player_Attack : MonoBehaviour
             Bullet b = Instantiate<Bullet>(bullet);
 
             b.gameObject.SetActive(false);
-            b.gameObject.transform.SetParent(pos);
+            b.gameObject.transform.SetParent(parent.transform);
             bulletPool.Add(b);
         }
     }
@@ -47,15 +49,13 @@ public class Player_Attack : MonoBehaviour
                 if (curBulletIndex >= bulletMaxCount - 1)
                 {
                     curBulletIndex = 0;
+                    curtime = cooltime;
                 }
                 else
                 {
                     curBulletIndex++;
                 }
             }
-                
-
-            curtime = cooltime;
         }
         curtime -= Time.deltaTime;
 

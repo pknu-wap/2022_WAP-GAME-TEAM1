@@ -12,6 +12,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource[] bgm;
 
+    [SerializeField]
+    private AudioSource gameOverMusic;
+
+    public int nowPlayingBGMIndex = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -23,9 +28,23 @@ public class SoundManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
+    public void PlayBGM(int soundToPlay)
+    {
+        gameOverMusic.Stop();
+        bgm[nowPlayingBGMIndex].Stop();
+        bgm[soundToPlay].Play();
+        nowPlayingBGMIndex = soundToPlay;
+    }
+
     public void PlaySFX(int soundToPlay)
     {
         soundEffects[soundToPlay].Stop();
         soundEffects[soundToPlay].Play();
+    }
+
+    public void PlayGameOver()
+    {
+        bgm[nowPlayingBGMIndex].Stop();
+        gameOverMusic.Play();
     }
 }
