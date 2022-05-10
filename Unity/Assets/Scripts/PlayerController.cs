@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    static public PlayerController instance;
+
     public GameObject UIGameOver;
 
     [SerializeField]
@@ -27,20 +29,27 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     //발의 포지션 
     private Vector2 footPosition;
-    //SpriteRenderer 컴포넌트
-    private SpriteRenderer theSR;
     //애니메이터
     private Animator anim;
     //플레이어 죽음 이펙트
     public GameObject deadEffect;
 
 
-    void Start()
+    void Awake()
     {
-        theRB = GetComponent<Rigidbody2D>();
-        theSR = GetComponent<SpriteRenderer>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        anim = GetComponent<Animator>();
+        if (instance == null)
+        {
+            theRB = GetComponent<Rigidbody2D>();
+            capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+            anim = GetComponent<Animator>();
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     void Update()
@@ -49,9 +58,12 @@ public class PlayerController : MonoBehaviour
 
         //플레이어의 좌우반전을 y축 회전을 이용하여 구현
         //총알 발사시에 rotation에 맞는 방향으로 발사하기 위해서
-        var movement = Input.GetAxis("Horizontal");
-        if (!Mathf.Approximately(0, movement))
-            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        // var movement = Input.GetAxis("Horizontal");
+        //if (!Mathf.Approximately(0, movement))
+        if (theRB.velocity.x > 0)
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        else if (theRB.velocity.x < 0)
+            transform.eulerAngles = new Vector3(0, 180, 0);
 
         // capsuleCollider의 min, max, center등의 위치 정보를 나타냄
         Bounds bounds = capsuleCollider2D.bounds;
@@ -93,9 +105,10 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.PlaySFX(1);
             Instantiate(deadEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            GameManager.instance.isDead = false;
+            //GameManager.instance.isDead = false;
             GameObject objUIGameOver = Instantiate(UIGameOver);
             objUIGameOver.transform.position = new Vector3(0,0,-1);
+            SoundManager.instance.PlayGameOver();
         }
 
         //애니메이션 세팅
