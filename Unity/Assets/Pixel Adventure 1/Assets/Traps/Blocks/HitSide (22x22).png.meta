@@ -173,10 +173,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      HitSide (22x22)_0: 5273281925071742904
-      HitSide (22x22)_2: 873812864866779284
-      HitSide (22x22)_1: -991449457031105569
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
