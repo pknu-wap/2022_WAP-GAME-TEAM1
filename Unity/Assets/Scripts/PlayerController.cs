@@ -60,10 +60,16 @@ public class PlayerController : MonoBehaviour
         //총알 발사시에 rotation에 맞는 방향으로 발사하기 위해서
         // var movement = Input.GetAxis("Horizontal");
         //if (!Mathf.Approximately(0, movement))
+        /* head conflict
         if (theRB.velocity.x > 0)
             transform.eulerAngles = new Vector3(0, 0, 0);
         else if (theRB.velocity.x < 0)
             transform.eulerAngles = new Vector3(0, 180, 0);
+        */
+        var movement = Input.GetAxis("Horizontal");
+        
+        if (!Mathf.Approximately(0, movement))
+            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
         // capsuleCollider의 min, max, center등의 위치 정보를 나타냄
         Bounds bounds = capsuleCollider2D.bounds;
