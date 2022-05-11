@@ -21,7 +21,6 @@ public class Player_Attack : MonoBehaviour
 
     void Start()
     {
-        
         for (int i = 0; i < bulletMaxCount; i++)
         {
             Bullet b = Instantiate<Bullet>(bullet);

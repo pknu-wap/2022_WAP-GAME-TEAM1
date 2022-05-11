@@ -208,5 +208,5 @@ MonoBehaviour:
   bullet: {fileID: 6107481317604233397, guid: 2440279a7c949f44d9c2cc17e96e4c7b, type: 3}
   pos: {fileID: 456754152}
   cooltime: 1
-  parent: {fileID: 8705807150588379781, guid: 797080dcc6c4693448dd8246db586ffe, type: 3}
+  parent: {fileID: 0}
   bulletMaxCount: 4
