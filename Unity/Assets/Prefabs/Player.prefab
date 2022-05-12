@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3402183766137557920}
   - component: {fileID: 3402183766137557935}
   - component: {fileID: 1611468498}
+  - component: {fileID: 8420333004482166323}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -210,3 +211,16 @@ MonoBehaviour:
   cooltime: 1
   parent: {fileID: 0}
   bulletMaxCount: 4
+--- !u!114 &8420333004482166323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402183766137557934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79cc9649e701d040a3534fabb9092d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
