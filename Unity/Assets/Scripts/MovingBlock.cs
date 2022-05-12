@@ -28,7 +28,7 @@ public class MovingBlock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {        
             moving=true;
-            GetComponent<BoxCollider2D>().isTrigger = false;
+            //GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
 }
