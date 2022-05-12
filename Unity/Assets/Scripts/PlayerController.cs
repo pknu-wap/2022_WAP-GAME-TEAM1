@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     static public PlayerController instance;
-
     public GameObject UIGameOver;
+    //무빙블럭용
+    public Vector2 blockSpeed;
 
     [SerializeField]
     // 이동 속도
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deadEffect;
 
 
+
     void Awake()
     {
         if (instance == null)
@@ -58,7 +60,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRB.velocity.y);
+        theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRB.velocity.y)
+                            + blockSpeed;
 
         //플레이어의 좌우반전을 y축 회전을 이용하여 구현
         //총알 발사시에 rotation에 맞는 방향으로 발사하기 위해서
