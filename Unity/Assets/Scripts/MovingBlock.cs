@@ -6,7 +6,7 @@ public class MovingBlock : MonoBehaviour
 {
     public Vector2 v2;
     private Rigidbody2D rb;
-    public bool moving = false;
+    public bool moving = true;
 
     void Start()
     {
@@ -15,13 +15,13 @@ public class MovingBlock : MonoBehaviour
 
     void Awake()
     {
-       rb = gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
-       rb.bodyType = RigidbodyType2D.Kinematic; 
+       rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (moving) rb.velocity = v2;
+        //if (moving)
+        rb.velocity = v2;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
