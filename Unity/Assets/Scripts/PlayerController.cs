@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
     // groundLayer 판단
     private LayerMask groundLayer;
     // MovingPlatformLayer 판단
+    [SerializeField]
     private LayerMask MovingPlatformLayer;
+    [SerializeField]
+    private LayerMask MovingBlockLayer;
     // 캡슐 콜라이더 
     private CapsuleCollider2D capsuleCollider2D;
     //발이 땅에 닿아있는지 여부 판단
