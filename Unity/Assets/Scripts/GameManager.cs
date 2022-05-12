@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Map1");
         Spawning();
+        Debug.Log("hello");
     }
 
     public void loadGame()
