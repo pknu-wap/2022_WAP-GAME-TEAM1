@@ -79,7 +79,9 @@ public class PlayerController : MonoBehaviour
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
 
         // footPosition의 지름 0.1범위 가상의 원 범위를 설정해서 이 범위가 groundLayer에 닿아있으면 true를 반환
-        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer) || Physics2D.OverlapCircle(footPosition, 0.1f, MovingPlatformLayer);
+        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer)
+                    || Physics2D.OverlapCircle(footPosition, 0.1f, MovingPlatformLayer)
+                    || Physics2D.OverlapCircle(footPosition, 0.1f, MovingBlockLayer);
 
         //땅에 닿아있으면 2단 점프 가능 여부 초기화
         if (isGrounded)
