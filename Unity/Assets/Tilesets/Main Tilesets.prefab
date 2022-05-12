@@ -2240,15 +2240,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!114 &9061033630492871145
-=======
---- !u!114 &7255916149299971996
->>>>>>> parent of 27ca142 (MAP3)
-=======
---- !u!114 &7255916149299971996
->>>>>>> parent of 27ca142 (MAP3)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
