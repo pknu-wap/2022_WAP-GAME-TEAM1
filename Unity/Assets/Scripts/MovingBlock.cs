@@ -30,7 +30,12 @@ public class MovingBlock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {        
             moving=true;
-            PlayerController.instance.blockSpeed = v2;
+            PlayerController.instance.blockSpeed = new Vector2(v2.x,0);
+        }
+        if (collision.CompareTag("DeleteBlock"))
+        {
+            Debug.Log("ee");
+            Destroy(gameObject);
         }
 	}
 
