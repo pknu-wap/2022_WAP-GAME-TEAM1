@@ -17,10 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map2.unity
     guid: 7972d516c7467124cb6e85e2887402a4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MAP3 test.unity
     guid: 70f9fab2f9dab1d41995754eab855fcf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MAP4.unity
     guid: 8667c4b9fbb3948c8a0f334091e7730b
+  - enabled: 0
+    path: Assets/Scenes/BossTest.unity
+    guid: e4ed083199680e94b92cb620f1f7dc48
   m_configObjects: {}
