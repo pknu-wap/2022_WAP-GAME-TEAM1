@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             anim = GetComponent<Animator>();
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour
             GameObject objUIGameOver = Instantiate(UIGameOver);
             objUIGameOver.transform.position = new Vector3(0,0,-1);
             SoundManager.instance.PlayGameOver();
+            GameManager.instance.StartDeadCo();
         }
 
         //애니메이션 세팅
