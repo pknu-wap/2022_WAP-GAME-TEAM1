@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BossTankBullet : MonoBehaviour
 {
     public float speed;
 
@@ -10,14 +10,12 @@ public class Bullet : MonoBehaviour
     {
         Invoke("BulletOff", 2f); //2ÃÊ µÚ¿¡ Bullet ¼Ò¸ê.
     }
-
-    void Update() { 
-        if(transform.rotation.y == 0)
-            transform.Translate(transform.right * speed * Time.deltaTime);
-        else
-            transform.Translate(transform.right*-1 * speed * Time.deltaTime);
-       
+    
+    void Update()
+    {
+        transform.position += new Vector3(-speed * transform.localScale.x * Time.deltaTime, 0f, 0f);
     }
+
     void BulletOff()
     {
         gameObject.SetActive(false);
@@ -27,5 +25,4 @@ public class Bullet : MonoBehaviour
     {
         BulletOff();
     }
-
 }
