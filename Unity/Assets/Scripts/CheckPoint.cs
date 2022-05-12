@@ -11,8 +11,9 @@ public class CheckPoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
-        {
+        {        
             StartCoroutine(CheckPointCo());
+            SLManager.instance.Save();
         }
     }
 
@@ -20,7 +21,7 @@ public class CheckPoint : MonoBehaviour
     {
         theSR.sprite = cpOff;
     }
-
+    
     private IEnumerator CheckPointCo()
     {
         theSR.sprite = cpOn;

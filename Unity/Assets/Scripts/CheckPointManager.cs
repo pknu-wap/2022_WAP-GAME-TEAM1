@@ -10,7 +10,7 @@ public class CheckPointManager : MonoBehaviour
     public string lastSpawnMapName;
 
     public string nowMapName = "Map1";
-    public string nextMapName = "Map1";
+
     
 
     private void Awake()
@@ -25,20 +25,6 @@ public class CheckPointManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        spawnPoint = PlayerController.instance.transform.position;
-    }
-
-    void Update()
-    {
-        if (nowMapName != nextMapName)
-        {
-            nowMapName = nextMapName;
-        }
-    }
-
 
     public void SetSpawnPoint(Vector3 newSpawnPoint)
     {

@@ -12,7 +12,7 @@ public class TransferMap : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(transferMap);
-            CheckPointManager.instance.nextMapName = transferMap;
+            CheckPointManager.instance.nowMapName = transferMap;
         }
             
     }
