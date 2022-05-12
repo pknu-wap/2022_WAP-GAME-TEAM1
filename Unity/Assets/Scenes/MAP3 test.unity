@@ -2060,7 +2060,11 @@ Transform:
   m_GameObject: {fileID: 238307112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -10.45, y: -7.95, z: 0}
+=======
+  m_LocalPosition: {x: 7.45, y: 3.67, z: 0}
+>>>>>>> parent of 27ca142 (MAP3)
 =======
   m_LocalPosition: {x: 7.45, y: 3.67, z: 0}
 >>>>>>> parent of 27ca142 (MAP3)
@@ -2086,8 +2090,11 @@ MonoBehaviour:
   pos: {fileID: 105826797}
   cooltime: 0.2
 <<<<<<< HEAD
+<<<<<<< HEAD
   parent: {fileID: 0}
   bulletMaxCount: 0
+=======
+>>>>>>> parent of 27ca142 (MAP3)
 =======
 >>>>>>> parent of 27ca142 (MAP3)
 --- !u!1001 &325050588
@@ -4594,8 +4601,11 @@ MonoBehaviour:
   bgm:
   - {fileID: 1039888938}
 <<<<<<< HEAD
+<<<<<<< HEAD
   gameOverMusic: {fileID: 0}
   nowPlayingBGMIndex: 0
+=======
+>>>>>>> parent of 27ca142 (MAP3)
 =======
 >>>>>>> parent of 27ca142 (MAP3)
 --- !u!4 &400409754
