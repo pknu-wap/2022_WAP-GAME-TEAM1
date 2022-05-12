@@ -6,7 +6,7 @@ public class MovingBlock : MonoBehaviour
 {
     public Vector2 v2;
     private Rigidbody2D rb;
-    public bool moving = true;
+    public bool moving;
 
     void Start()
     {
@@ -20,8 +20,7 @@ public class MovingBlock : MonoBehaviour
 
     void Update()
     {
-        //if (moving)
-        rb.velocity = v2;
+        if (moving) rb.velocity = v2;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
