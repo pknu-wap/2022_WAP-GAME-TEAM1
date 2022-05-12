@@ -1,34 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject UIGameOver;
 
     public bool isDead;
-    public bool showDead;
 
     private void Awake()
     {
-        instance = this;
-    }
-
-    void Start()
-    {
-        isDead = false;
-        showDead = false;
-    }
-
-    
-    void Update()
-    {
-        if (isDead && !showDead) //ì£½ì—ˆì„ ë•Œ í•œë²ˆë§Œ ì‘ë™
+        if (instance == null)
         {
-            showDead = true;
-            GameObject objUIGameOver = Instantiate(UIGameOver);
-            objUIGameOver.transform.position = new Vector3(0,0,-1);
+            instance = this;
+            isDead = false;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
+    //¸®½ºÆù
+    public void Spawning()
+    {
+        SoundManager.instance.PlayBGM(SoundManager.instance.nowPlayingBGMIndex);
+        PlayerController.instance.transform.position = CheckPointManager.instance.spawnPoint;
+        PlayerController.instance.gameObject.SetActive(true);
+    }
+   
+    public void StartDeadCo()
+    {
+        StartCoroutine(DeadCo());
+    }
+
+    public IEnumerator DeadCo()
+    {
+        while (true)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                isDead = false;
+
+                // ¸¶Áö¸· Ã¼Å© Æ÷ÀÎÆ®°¡ ´Ù¸¥ ¸Ê¿¡ ÀÖÀ» °æ¿ì
+                if (CheckPointManager.instance.lastSpawnMapName != CheckPointManager.instance.nowMapName)
+                {
+                    // ¸Ê ÀÌµ¿À» À§ÇÑ º¯¼ö ÃÊ±âÈ­
+                    CheckPointManager.instance.nowMapName = CheckPointManager.instance.lastSpawnMapName;
+
+                    SceneManager.LoadScene(CheckPointManager.instance.lastSpawnMapName);
+                }
+
+                // ¸¶Áö¸· Ã¼Å©Æ÷ÀÎÆ®°¡ °°Àº ¸Ê
+                else
+                {
+                    SceneManager.LoadScene(CheckPointManager.instance.nowMapName);
+                }
+                Spawning();
+            }
+
+            yield return null;
         }
     }
+
+    public void newGame()
+    {
+        SceneManager.LoadScene("Map1");
+        Spawning();
+    }
+
+    public void loadGame()
+    {
+        SLManager.instance.Load();
+        SceneManager.LoadScene(CheckPointManager.instance.lastSpawnMapName);
+        Spawning();
+    }
+
 }

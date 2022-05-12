@@ -4,92 +4,122 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    static public PlayerController instance;
+
+    public GameObject UIGameOver;
+
     [SerializeField]
-    // ÀÌµ¿ ¼Óµµ
-    private float moveSpeed;
+    // ì´ë™ ì†ë„
+    private float moveSpeed; 
     [SerializeField]
-    // Á¡ÇÁ·Â
+    // ì í”„ë ¥
     private float jumpForce;
-    // 2´Ü Á¡ÇÁ °¡´É ¿©ºÎ
+    // 2ë‹¨ ì í”„ ê°€ëŠ¥ ì—¬ë¶€
     private bool canDoubleJump;
-    //rigidbody ÄÄÆ÷³ÍÆ® 
+    //rigidbody ì»´í¬ë„ŒíŠ¸
     private Rigidbody2D theRB;
-
     [SerializeField]
-    // groundLayer ÆÇ´Ü
+    // groundLayer íŒë‹¨
     private LayerMask groundLayer;
-    // MovingPlatformLayer ÆÇ´Ü
+    // MovingPlatformLayer íŒë‹¨
     private LayerMask MovingPlatformLayer;
-    // Ä¸½¶ Äİ¶óÀÌ´õ 
+    // ìº¡ìŠ ì½œë¼ì´ë” 
     private CapsuleCollider2D capsuleCollider2D;
-    //¹ßÀÌ ¶¥¿¡ ´ê¾ÆÀÖ´ÂÁö ¿©ºÎ ÆÇ´Ü
+    //ë°œì´ ë•…ì— ë‹¿ì•„ìˆëŠ”ì§€ ì—¬ë¶€ íŒë‹¨
     private bool isGrounded;
-    //¹ßÀÇ Æ÷Áö¼Ç 
+    //ë°œì˜ í¬ì§€ì…˜ 
     private Vector2 footPosition;
-
-    //SpriteRenderer ÄÄÆ÷³ÍÆ®
-    private SpriteRenderer theSR;
-    //¾Ö´Ï¸ŞÀÌÅÍ
+    //ì• ë‹ˆë©”ì´í„°
     private Animator anim;
+    //í”Œë ˆì´ì–´ ì£½ìŒ ì´í™íŠ¸
+    public GameObject deadEffect;
 
 
-
-    void Start()
+    void Awake()
     {
-        theRB = GetComponent<Rigidbody2D>();
-        theSR = GetComponent<SpriteRenderer>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        anim = GetComponent<Animator>();
+        if (instance == null)
+        {
+            theRB = GetComponent<Rigidbody2D>();
+            capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+            anim = GetComponent<Animator>();
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     void Update()
     {
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRB.velocity.y);
 
-        //ÇÃ·¹ÀÌ¾îÀÇ ÁÂ¿ì¹İÀüÀ» yÃà È¸ÀüÀ» ÀÌ¿ëÇÏ¿© ±¸Çö
-        //ÃÑ¾Ë ¹ß»ç½Ã¿¡ rotation¿¡ ¸Â´Â ¹æÇâÀ¸·Î ¹ß»çÇÏ±â À§ÇØ¼­
+        //í”Œë ˆì´ì–´ì˜ ì¢Œìš°ë°˜ì „ì„ yì¶• íšŒì „ì„ ì´ìš©í•˜ì—¬ êµ¬í˜„
+        //ì´ì•Œ ë°œì‚¬ì‹œì— rotationì— ë§ëŠ” ë°©í–¥ìœ¼ë¡œ ë°œì‚¬í•˜ê¸° ìœ„í•´ì„œ
+        // var movement = Input.GetAxis("Horizontal");
+        //if (!Mathf.Approximately(0, movement))
+        /* head conflict
+        if (theRB.velocity.x > 0)
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        else if (theRB.velocity.x < 0)
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        */
         var movement = Input.GetAxis("Horizontal");
+        
         if (!Mathf.Approximately(0, movement))
             transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
-        // capsuleColliderÀÇ min, max, centerµîÀÇ À§Ä¡ Á¤º¸¸¦ ³ªÅ¸³¿
+        // capsuleColliderì˜ min, max, centerë“±ì˜ ìœ„ì¹˜ ì •ë³´ë¥¼ ë‚˜íƒ€ëƒ„
         Bounds bounds = capsuleCollider2D.bounds;
         
-        //¹ßÀÇ Æ÷Áö¼ÇÀº Äİ¶óÀÌ´õ ¹üÀ§ÀÇ xÃà Áß°£, yÃà ÃÖ¼Ò °ª.
+        //ë°œì˜ í¬ì§€ì…˜ì€ ì½œë¼ì´ë” ë²”ìœ„ì˜ xì¶• ì¤‘ê°„, yì¶• ìµœì†Œ ê°’.
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
 
-        // footPositionÀÇ Áö¸§ 0.1¹üÀ§ °¡»óÀÇ ¿ø ¹üÀ§¸¦ ¼³Á¤ÇØ¼­ ÀÌ ¹üÀ§°¡ groundLayer¿¡ ´ê¾ÆÀÖÀ¸¸é true¸¦ ¹İÈ¯
+        // footPositionì˜ ì§€ë¦„ 0.1ë²”ìœ„ ê°€ìƒì˜ ì› ë²”ìœ„ë¥¼ ì„¤ì •í•´ì„œ ì´ ë²”ìœ„ê°€ groundLayerì— ë‹¿ì•„ìˆìœ¼ë©´ trueë¥¼ ë°˜í™˜
         isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer) || Physics2D.OverlapCircle(footPosition, 0.1f, MovingPlatformLayer);
 
-        //¶¥¿¡ ´ê¾ÆÀÖÀ¸¸é 2´Ü Á¡ÇÁ °¡´É ¿©ºÎ ÃÊ±âÈ­
+        //ë•…ì— ë‹¿ì•„ìˆìœ¼ë©´ 2ë‹¨ ì í”„ ê°€ëŠ¥ ì—¬ë¶€ ì´ˆê¸°í™”
         if (isGrounded)
         {
             canDoubleJump = true;
         }
 
-        // Á¡ÇÁ °ü·Ã (Space·Î Á¡ÇÁ)
+        // ì í”„ ê´€ë ¨ (Spaceë¡œ ì í”„)
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // ¶¥¿¡ ´ê¾ÆÀÖÀ¸¸é Á¡ÇÁ °¡´É
+            // ë•…ì— ë‹¿ì•„ìˆìœ¼ë©´ ì í”„ ê°€ëŠ¥
             if (isGrounded)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                SoundManager.instance.PlaySFX(0);
+                
             }
-            // canDoubleJump°¡ true¸é °øÁß¿¡¼­ Á¡ÇÁ ÇÑ¹ø ´õ °¡´É.
+            // canDoubleJumpê°€ trueë©´ ê³µì¤‘ì—ì„œ ì í”„ í•œë²ˆ ë” ê°€ëŠ¥.
             else if (canDoubleJump)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce * 0.8f);
                 canDoubleJump = false;
+                SoundManager.instance.PlaySFX(0);
             }
         }
-        //Á×À½°ü·Ã ÄÁÆ®·Ñ Á×À½ º¯¼ö´Â GameManager¿¡¼­ ÄÁÆ®·Ñ
+
+        //ì£½ìŒê´€ë ¨ ì»¨íŠ¸ë¡¤ ì£½ìŒ ë³€ìˆ˜ëŠ” GameManagerì—ì„œ ì»¨íŠ¸ë¡¤
         if (GameManager.instance.isDead)
         {
+            SoundManager.instance.PlaySFX(1);
+            Instantiate(deadEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            GameManager.instance.isDead = false;
+            //GameManager.instance.isDead = false;
+            GameObject objUIGameOver = Instantiate(UIGameOver);
+            objUIGameOver.transform.position = new Vector3(0,0,-1);
+            SoundManager.instance.PlayGameOver();
+            GameManager.instance.StartDeadCo();
         }
 
-        //¾Ö´Ï¸ŞÀÌ¼Ç ¼¼ÆÃ.
+        //ì• ë‹ˆë©”ì´ì…˜ ì„¸íŒ…
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("canDoubleJump", canDoubleJump);

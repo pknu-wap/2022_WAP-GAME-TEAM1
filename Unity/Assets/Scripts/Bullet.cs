@@ -5,20 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D theRB;
     public float distance;
-    public LayerMask isLayer;
-    void Start()
+
+    void OnEnable()
     {
-        Invoke("BulletOff", 2); //2檬 第俊 Bullet 家戈.
+        Invoke("BulletOff", 2f); //2檬 第俊 Bullet 家戈.
     }
 
-    void Update() {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.right, distance, isLayer);
-        if (ray.collider != null)
-            BulletOff();
-
-        if(transform.rotation.y==0)
+    void Update() { 
+        if(transform.rotation.y == 0)
             transform.Translate(transform.right * speed * Time.deltaTime);
         else
             transform.Translate(transform.right*-1 * speed * Time.deltaTime);
@@ -26,7 +21,12 @@ public class Bullet : MonoBehaviour
     }
     void BulletOff()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        BulletOff();
     }
 
 }
