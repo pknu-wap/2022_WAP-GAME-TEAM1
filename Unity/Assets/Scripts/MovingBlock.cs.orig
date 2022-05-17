@@ -17,22 +17,28 @@ public class MovingBlock : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+<<<<<<< HEAD
         {
             rb.velocity = v2;
-            PlayerController.instance.blockSpeed = new Vector2(v2.x,0);
+            PlayerController.instance.blockSpeed = v2;
             PlayerController.instance.anim.SetBool("isMovingPlatform", true);
+=======
+        {        
+            moving=true;
+            PlayerController.instance.blockSpeed = new Vector2(v2.x,0);
         }
         if (collision.CompareTag("DeleteBlock"))
         {
             Debug.Log("ee");
             Destroy(gameObject);
+>>>>>>> munbin
         }
 	}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
+        {        
             PlayerController.instance.blockSpeed = new Vector2(0,0);
             PlayerController.instance.anim.SetBool("isMovingPlatform", false);
         }

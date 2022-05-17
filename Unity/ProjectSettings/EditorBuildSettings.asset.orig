@@ -17,8 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map2.unity
     guid: 7972d516c7467124cb6e85e2887402a4
-  - enabled: 0
+<<<<<<< HEAD
+  - enabled: 1
     path: Assets/Scenes/MAP3.unity
+=======
+  - enabled: 0
+    path: Assets/Scenes/MAP3 test.unity
+>>>>>>> munbin
     guid: 70f9fab2f9dab1d41995754eab855fcf
   - enabled: 0
     path: Assets/Scenes/MAP4.unity

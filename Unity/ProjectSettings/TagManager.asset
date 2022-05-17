@@ -7,6 +7,7 @@ TagManager:
   - Tilemap
   - MovingPlatform
   - Bullet
+  - DeleteBlock
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Obstacle
   - MovingPlatform
   - Bullet
-  - MovingBlock
+  - 
   - 
   - 
   - 
