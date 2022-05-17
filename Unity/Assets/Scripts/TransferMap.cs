@@ -11,6 +11,7 @@ public class TransferMap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GameManager.instance.isMapChanging = true;
             SceneManager.LoadScene(transferMap);
             CheckPointManager.instance.nowMapName = transferMap;
         }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public bool isDead;
+    public bool isMapChanging;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
                     SceneManager.LoadScene(CheckPointManager.instance.nowMapName);
                 }
                 Spawning();
+                break;
             }
 
             yield return null;
@@ -67,7 +69,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Map1");
         Spawning();
-        Debug.Log("hello");
     }
 
     public void loadGame()
@@ -76,5 +77,4 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(CheckPointManager.instance.lastSpawnMapName);
         Spawning();
     }
-
 }

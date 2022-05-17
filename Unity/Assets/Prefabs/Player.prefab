@@ -104,8 +104,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1320001771
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,14 +168,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIGameOver: {fileID: 2470237194407722801, guid: 3366bd65b0b40ab4696a8a402a5491c3, type: 3}
+  blockSpeed: {x: 0, y: 0}
   moveSpeed: 5
   jumpForce: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  MovingPlatformLayer:
-    serializedVersion: 2
-    m_Bits: 512
   MovingBlockLayer:
     serializedVersion: 2
     m_Bits: 2048

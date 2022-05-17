@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     // groundLayer 판단
     private LayerMask groundLayer;
-    // MovingPlatformLayer 판단
-    [SerializeField]
-    private LayerMask MovingPlatformLayer;
     [SerializeField]
     private LayerMask MovingBlockLayer;
     // 캡슐 콜라이더 
@@ -34,11 +31,9 @@ public class PlayerController : MonoBehaviour
     //발의 포지션 
     private Vector2 footPosition;
     //애니메이터
-    private Animator anim;
+    public Animator anim;
     //플레이어 죽음 이펙트
     public GameObject deadEffect;
-
-
 
     void Awake()
     {
@@ -65,18 +60,12 @@ public class PlayerController : MonoBehaviour
 
         //플레이어의 좌우반전을 y축 회전을 이용하여 구현
         //총알 발사시에 rotation에 맞는 방향으로 발사하기 위해서
-        // var movement = Input.GetAxis("Horizontal");
-        //if (!Mathf.Approximately(0, movement))
-        /* head conflict
+
         if (theRB.velocity.x > 0)
             transform.eulerAngles = new Vector3(0, 0, 0);
         else if (theRB.velocity.x < 0)
             transform.eulerAngles = new Vector3(0, 180, 0);
-        */
-        var movement = Input.GetAxis("Horizontal");
-        
-        if (!Mathf.Approximately(0, movement))
-            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+       
 
         // capsuleCollider의 min, max, center등의 위치 정보를 나타냄
         Bounds bounds = capsuleCollider2D.bounds;
@@ -85,8 +74,7 @@ public class PlayerController : MonoBehaviour
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
 
         // footPosition의 지름 0.1범위 가상의 원 범위를 설정해서 이 범위가 groundLayer에 닿아있으면 true를 반환
-        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer)
-                    || Physics2D.OverlapCircle(footPosition, 0.1f, MovingPlatformLayer)
+        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer)                  
                     || Physics2D.OverlapCircle(footPosition, 0.1f, MovingBlockLayer);
 
         //땅에 닿아있으면 2단 점프 가능 여부 초기화
@@ -120,9 +108,7 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.PlaySFX(1);
             Instantiate(deadEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            //GameManager.instance.isDead = false;
             GameObject objUIGameOver = Instantiate(UIGameOver);
-            objUIGameOver.transform.position = new Vector3(0,0,-1);
             SoundManager.instance.PlayGameOver();
             GameManager.instance.StartDeadCo();
         }
