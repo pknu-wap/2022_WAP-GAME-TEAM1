@@ -89,7 +89,10 @@ public class PlayerController : MonoBehaviour
             // 땅에 닿아있으면 점프 가능
             if (isGrounded)
             {
-                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                if (theRB.velocity.y < 0)
+                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                else
+                    theRB.velocity = new Vector2(theRB.velocity.x, theRB.velocity.y + jumpForce);
                 SoundManager.instance.PlaySFX(0);
                 
             }

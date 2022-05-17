@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   v2: {x: -6, y: 0}
-  moving: 0
 --- !u!61 &5411734681188483164
 BoxCollider2D:
   m_ObjectHideFlags: 0

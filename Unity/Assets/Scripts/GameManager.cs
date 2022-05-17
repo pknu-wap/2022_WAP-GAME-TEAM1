@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public bool isDead;
-    public bool isMapChanging;
+    public bool isMapChanging = false;
 
     private void Awake()
     {

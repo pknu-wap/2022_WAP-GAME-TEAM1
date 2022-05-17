@@ -6,7 +6,6 @@ public class MovingBlock : MonoBehaviour
 {
     public Vector2 v2;
     private Rigidbody2D rb;
-    private Rigidbody2D playerRb;
 
     void Start()
     {
@@ -19,13 +18,8 @@ public class MovingBlock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             rb.velocity = v2;
-            PlayerController.instance.blockSpeed = new Vector2(v2.x,0);
+            PlayerController.instance.blockSpeed = new Vector2(v2.x, 0);
             PlayerController.instance.anim.SetBool("isMovingPlatform", true);
-        }
-        if (collision.CompareTag("DeleteBlock"))
-        {
-            Debug.Log("ee");
-            Destroy(gameObject);
         }
 	}
 
