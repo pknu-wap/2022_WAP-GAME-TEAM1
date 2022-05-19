@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
             anim = GetComponent<Animator>();
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+
+            CanMove = true;
             //this.gameObject.SetActive(false);
         }
         else

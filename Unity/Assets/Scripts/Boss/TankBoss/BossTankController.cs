@@ -52,7 +52,7 @@ public class BossTankController : MonoBehaviour
     private bool stop;
 
 
-    void Start()
+    void OnEnable()
     { 
         //오브젝트 풀링 셋팅
         for (int i = 0; i < bulletMaxCount; i++)
@@ -169,6 +169,9 @@ public class BossTankController : MonoBehaviour
 
     public void TakeHit()
     {
+        tankSR.color = new Color(1f, 0.4f, 0.4f);
+        Invoke("returnColor", 0.1f);
+
         hp--;
         anim.SetTrigger("Hit");
 
@@ -189,6 +192,11 @@ public class BossTankController : MonoBehaviour
         timeBetweenShots /= shotSpeedUp;
         moveSpeed = moveSpeed * speedUp;
         isBerserk = true;
+    }
+
+    void returnColor()
+    {
+        tankSR.color = new Color(1, 1, 1);
     }
 
 }

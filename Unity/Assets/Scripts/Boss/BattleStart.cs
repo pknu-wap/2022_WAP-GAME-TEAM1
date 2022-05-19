@@ -12,6 +12,7 @@ public class BattleStart : MonoBehaviour
         {
             SoundManager.instance.PlayBGM(1);
             Boss.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }
