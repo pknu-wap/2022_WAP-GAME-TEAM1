@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MAP4.unity
     guid: 8667c4b9fbb3948c8a0f334091e7730b
   - enabled: 0
-    path: Assets/Scenes/BossTest.unity
+    path: Assets/Scenes/Map5(Boss).unity
     guid: e4ed083199680e94b92cb620f1f7dc48
   m_configObjects: {}

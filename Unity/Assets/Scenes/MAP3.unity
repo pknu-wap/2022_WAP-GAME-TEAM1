@@ -12262,13 +12262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 542894437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ff214b888e6a245b43e9eeac03d1e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8e0007f8742534a858b647eca9ae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 1802415020}
-  endPos: {fileID: 1490932088}
-  platformPos: {fileID: 1490932088}
-  MoveSpeed: 3
+  startPos: {fileID: 0}
+  endPos: {fileID: 0}
+  platformPos: {fileID: 0}
+  MoveSpeed: 0
 --- !u!61 &542894441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49656,13 +49656,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724401646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ff214b888e6a245b43e9eeac03d1e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8e0007f8742534a858b647eca9ae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 1650383443}
-  endPos: {fileID: 480759112}
-  platformPos: {fileID: 480759112}
-  MoveSpeed: 3
+  startPos: {fileID: 0}
+  endPos: {fileID: 0}
+  platformPos: {fileID: 0}
+  MoveSpeed: 0
 --- !u!251 &1724401652
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -54501,13 +54501,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942097249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ff214b888e6a245b43e9eeac03d1e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8e0007f8742534a858b647eca9ae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 2001242694}
-  endPos: {fileID: 571795510}
-  platformPos: {fileID: 571795510}
-  MoveSpeed: 3
+  startPos: {fileID: 0}
+  endPos: {fileID: 0}
+  platformPos: {fileID: 0}
+  MoveSpeed: 0
 --- !u!61 &1942097253
 BoxCollider2D:
   m_ObjectHideFlags: 0

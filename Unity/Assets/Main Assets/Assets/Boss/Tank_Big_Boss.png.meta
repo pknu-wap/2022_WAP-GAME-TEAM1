@@ -53,15 +53,6 @@ TextureImporter:
   - first:
       213: 8354857632991458569
     second: Tank_Big_Boss_16
-  - first:
-      213: 8676564766606086658
-    second: Tank_Big_Boss_17
-  - first:
-      213: -4365175999364049455
-    second: Tank_Big_Boss_18
-  - first:
-      213: 7091048334243966092
-    second: Tank_Big_Boss_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -178,10 +169,10 @@ TextureImporter:
       name: Tank_Big_Boss_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 145
-        width: 43
-        height: 41
+        x: 0
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +190,10 @@ TextureImporter:
       name: Tank_Big_Boss_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 145
-        width: 43
-        height: 40
+        x: 48
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +211,10 @@ TextureImporter:
       name: Tank_Big_Boss_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 97
-        width: 43
-        height: 40
+        x: 0
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +232,10 @@ TextureImporter:
       name: Tank_Big_Boss_3
       rect:
         serializedVersion: 2
-        x: 52
-        y: 97
-        width: 43
-        height: 40
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +253,10 @@ TextureImporter:
       name: Tank_Big_Boss_4
       rect:
         serializedVersion: 2
-        x: 100
-        y: 97
-        width: 43
-        height: 36
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +274,10 @@ TextureImporter:
       name: Tank_Big_Boss_5
       rect:
         serializedVersion: 2
-        x: 148
-        y: 97
-        width: 43
-        height: 35
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +295,10 @@ TextureImporter:
       name: Tank_Big_Boss_6
       rect:
         serializedVersion: 2
-        x: 4
-        y: 49
-        width: 43
-        height: 35
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,10 +316,10 @@ TextureImporter:
       name: Tank_Big_Boss_7
       rect:
         serializedVersion: 2
-        x: 52
-        y: 49
-        width: 43
-        height: 35
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +337,10 @@ TextureImporter:
       name: Tank_Big_Boss_8
       rect:
         serializedVersion: 2
-        x: 100
-        y: 49
-        width: 43
-        height: 35
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +358,10 @@ TextureImporter:
       name: Tank_Big_Boss_9
       rect:
         serializedVersion: 2
-        x: 148
-        y: 49
-        width: 43
-        height: 34
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +379,10 @@ TextureImporter:
       name: Tank_Big_Boss_10
       rect:
         serializedVersion: 2
-        x: 100
-        y: 1
-        width: 43
-        height: 42
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +400,10 @@ TextureImporter:
       name: Tank_Big_Boss_11
       rect:
         serializedVersion: 2
-        x: 101
-        y: 34
-        width: 6
-        height: 11
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +421,10 @@ TextureImporter:
       name: Tank_Big_Boss_12
       rect:
         serializedVersion: 2
-        x: 157
-        y: 38
-        width: 12
-        height: 5
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,10 +442,10 @@ TextureImporter:
       name: Tank_Big_Boss_13
       rect:
         serializedVersion: 2
-        x: 174
-        y: 38
+        x: 157
+        y: 32
         width: 12
-        height: 5
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +463,10 @@ TextureImporter:
       name: Tank_Big_Boss_14
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
-        width: 43
-        height: 34
+        x: 174
+        y: 32
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,10 +484,10 @@ TextureImporter:
       name: Tank_Big_Boss_15
       rect:
         serializedVersion: 2
-        x: 52
-        y: 1
-        width: 43
-        height: 34
+        x: 155
+        y: 18
+        width: 19
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,69 +505,6 @@ TextureImporter:
       name: Tank_Big_Boss_16
       rect:
         serializedVersion: 2
-        x: 157
-        y: 32
-        width: 12
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 905ba6350ca62f370800000000000000
-      internalID: 8354857632991458569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tank_Big_Boss_17
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 32
-        width: 12
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 202d9305fa9596870800000000000000
-      internalID: 8676564766606086658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tank_Big_Boss_18
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 18
-        width: 19
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d558d76e87cb63c0800000000000000
-      internalID: -4365175999364049455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tank_Big_Boss_19
-      rect:
-        serializedVersion: 2
         x: 155
         y: 1
         width: 19
@@ -588,8 +516,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8cacb7d3e6786260800000000000000
-      internalID: 7091048334243966092
+      spriteID: 905ba6350ca62f370800000000000000
+      internalID: 8354857632991458569
       vertices: []
       indices: 
       edges: []
