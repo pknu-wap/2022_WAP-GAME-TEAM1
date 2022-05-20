@@ -11,11 +11,11 @@ public class Bullet : MonoBehaviour
         Invoke("BulletOff", 2f); //2ÃÊ µÚ¿¡ Bullet ¼Ò¸ê.
     }
 
-    void Update() { 
-        if(transform.rotation.y == 0)
+    void Update() {
+        if (transform.rotation.y == 0)
             transform.Translate(transform.right * speed * Time.deltaTime);
         else
-            transform.Translate(transform.right*-1 * speed * Time.deltaTime);
+            transform.Translate(transform.right * -1 * speed * Time.deltaTime);
        
     }
     void BulletOff()

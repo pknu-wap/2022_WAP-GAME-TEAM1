@@ -3661,6 +3661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7625833178239233403, guid: 3e3b110e700fc354d8b119bd530ca144, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8562111001976140759, guid: 3e3b110e700fc354d8b119bd530ca144, type: 3}
       propertyPath: Loop
       value: 1
@@ -3670,6 +3674,14 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8562111001976140759, guid: 3e3b110e700fc354d8b119bd530ca144, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928605293538391419, guid: 3e3b110e700fc354d8b119bd530ca144, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928605293538391419, guid: 3e3b110e700fc354d8b119bd530ca144, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -5846,6 +5858,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 90232596}
+    - target: {fileID: 1611468498, guid: 4767de54230ae5c42afdfbda4af6e8fc, type: 3}
+      propertyPath: bulletMaxCount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3402183766137557924, guid: 4767de54230ae5c42afdfbda4af6e8fc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13701,7 +13717,7 @@ MonoBehaviour:
   bulletMaxCount: 10
   parent: {fileID: 574803501}
   hitBox: {fileID: 4265445}
-  maxHp: 100
+  maxHp: 60
   hp: 0
   explosion: {fileID: 0}
 --- !u!1001 &1443423681

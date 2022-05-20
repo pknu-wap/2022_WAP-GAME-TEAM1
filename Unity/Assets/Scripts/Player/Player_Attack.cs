@@ -6,7 +6,6 @@ public class Player_Attack : MonoBehaviour
 {
     public Bullet bullet;
     public Transform pos;
-    public float cooltime;
     private float curtime;
 
     public GameObject parent;
@@ -33,30 +32,27 @@ public class Player_Attack : MonoBehaviour
 
     void Update()
     {
-        if(curtime<=0)
+
+        //Shift to Fire Bullet
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //Shift to Fire Bullet
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            SoundManager.instance.PlaySFX(2);
+
+            bulletPool[curBulletIndex].transform.position = pos.position;
+            bulletPool[curBulletIndex].transform.rotation = transform.rotation;
+
+            bulletPool[curBulletIndex].gameObject.SetActive(true);
+
+            if (curBulletIndex >= bulletMaxCount - 1)
             {
-                SoundManager.instance.PlaySFX(2);
-
-                bulletPool[curBulletIndex].transform.position = pos.position;
-                bulletPool[curBulletIndex].transform.rotation = transform.rotation;
-
-                bulletPool[curBulletIndex].gameObject.SetActive(true);
-
-                if (curBulletIndex >= bulletMaxCount - 1)
-                {
-                    curBulletIndex = 0;
-                    curtime = cooltime;
-                }
-                else
-                {
-                    curBulletIndex++;
-                }
+                curBulletIndex = 0;
+            }
+            else
+            {
+                curBulletIndex++;
             }
         }
-        curtime -= Time.deltaTime;
+       
 
     }
 }

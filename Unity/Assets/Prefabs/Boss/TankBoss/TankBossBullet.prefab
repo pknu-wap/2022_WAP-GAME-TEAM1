@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2419311719199235223}
   - component: {fileID: 53796798959610071}
   - component: {fileID: -263773272820668122}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TankBossBullet
-  m_TagString: Untagged
+  m_TagString: BossBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

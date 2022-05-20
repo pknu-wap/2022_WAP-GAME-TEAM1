@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     private AudioSource[] bgm;
 
     [SerializeField]
+    public AudioSource[] bossSoundEffects;
+
+    [SerializeField]
     private AudioSource gameOverMusic;
 
     public int nowPlayingBGMIndex = 0;
@@ -46,5 +49,16 @@ public class SoundManager : MonoBehaviour
     {
         bgm[nowPlayingBGMIndex].Stop();
         gameOverMusic.Play();
+    }
+
+    public void PlayBossSFX(int soundToPlay)
+    {
+        bossSoundEffects[soundToPlay].Stop();
+        bossSoundEffects[soundToPlay].Play();
+    }
+
+    public void StopBossSFX(int soundToStop)
+    {
+        bossSoundEffects[soundToStop].Stop();
     }
 }

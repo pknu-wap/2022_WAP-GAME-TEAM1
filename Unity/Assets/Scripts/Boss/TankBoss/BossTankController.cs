@@ -87,6 +87,7 @@ public class BossTankController : MonoBehaviour
 
                     if (shotCounter <= 0)
                     {
+                        SoundManager.instance.PlayBossSFX(0);
                         shotCounter = timeBetweenShots;
 
                         TankbulletPool[curBulletIndex].transform.position = firePoint.position;
@@ -105,6 +106,7 @@ public class BossTankController : MonoBehaviour
                             hitBox.SetActive(false);
                             currentState = bossStates.moving;
                             stop = false;
+                            SoundManager.instance.PlayBossSFX(1);
                         }
 
                         else
@@ -116,7 +118,7 @@ public class BossTankController : MonoBehaviour
                 break;
             case bossStates.moving:
                 if (!stop)
-                {
+                { 
                     if (moveRight)
                     {
                         theBoss.Translate(new Vector3(moveSpeed * Time.deltaTime, 0f, 0f));
@@ -148,6 +150,7 @@ public class BossTankController : MonoBehaviour
                 {
                     curMoveCount = 0;
                     anim.SetTrigger("StopMoving");
+                    SoundManager.instance.StopBossSFX(1);
                     stop = true;
 
                     yield return new WaitForSeconds(1.5f);
@@ -157,6 +160,7 @@ public class BossTankController : MonoBehaviour
 
                     hitBox.SetActive(true);
                     stop = false;
+                    
                 }
                 break;
 
@@ -181,9 +185,8 @@ public class BossTankController : MonoBehaviour
         }
         else if (hp <= maxHp / 2 && !isBerserk)
         {
-            timeBetweenShots /= shotSpeedUp;
-            moveSpeed = moveSpeed * speedUp;
-            isBerserk = true;
+            Berserk();
+            
         }
     }
 
@@ -192,11 +195,16 @@ public class BossTankController : MonoBehaviour
         timeBetweenShots /= shotSpeedUp;
         moveSpeed = moveSpeed * speedUp;
         isBerserk = true;
+        tankSR.color = new Color(1f, 0.6f, 0.6f);
     }
 
     void returnColor()
     {
-        tankSR.color = new Color(1, 1, 1);
+        if (!isBerserk)
+            tankSR.color = new Color(1, 1, 1);
+        else
+            tankSR.color = new Color(1f, 0.6f, 0.6f);
+
     }
 
 }

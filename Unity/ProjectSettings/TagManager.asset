@@ -8,6 +8,7 @@ TagManager:
   - MovingPlatform
   - Bullet
   - DeleteBlock
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Obstacle
   - MovingPlatform
   - Bullet
-  - 
+  - BossBullet
   - 
   - 
   - 
