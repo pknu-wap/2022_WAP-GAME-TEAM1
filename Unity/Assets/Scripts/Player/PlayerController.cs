@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
 
     public bool CanMove;
 
-    [SerializeField] float bounceForce;
 
     void Awake()
     {
@@ -133,7 +132,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void Bounce()
+    public void Bounce(float bounceForce)
     {
         theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
     }

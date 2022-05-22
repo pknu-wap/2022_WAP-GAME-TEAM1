@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BounceParticle : MonoBehaviour
 {
+    [SerializeField] float bounceForce;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
