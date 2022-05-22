@@ -13,7 +13,6 @@ public class TriggeredmovingObject : Trap
     void Start()
     {
         isTriggered = false;
-        targetPos.parent = null;
     }
 
     

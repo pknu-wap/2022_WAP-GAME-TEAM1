@@ -19,7 +19,6 @@ public class MovingBlock : MonoBehaviour
         {
             rb.velocity = v2;
             PlayerController.instance.blockSpeed = new Vector2(v2.x, 0);
-            PlayerController.instance.anim.SetBool("isMovingPlatform", true);
         }
 	}
 
@@ -28,7 +27,6 @@ public class MovingBlock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerController.instance.blockSpeed = new Vector2(0,0);
-            PlayerController.instance.anim.SetBool("isMovingPlatform", false);
         }
     }
 }

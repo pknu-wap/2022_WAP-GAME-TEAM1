@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     public bool CanMove;
 
+    [SerializeField] float bounceForce;
+
     void Awake()
     {
         if (instance == null)
@@ -128,5 +130,11 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("canDoubleJump", canDoubleJump);
         }
         
+    }
+
+
+    public void Bounce()
+    {
+        theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
     }
 }

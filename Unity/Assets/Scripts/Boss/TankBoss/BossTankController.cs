@@ -49,7 +49,9 @@ public class BossTankController : MonoBehaviour
     private int moveCount;
     private int curMoveCount = 0;
 
-    private bool stop;
+    public bool stop;
+
+    public GameObject TriggerBlock;
 
 
     void OnEnable()
@@ -166,7 +168,19 @@ public class BossTankController : MonoBehaviour
 
 
             case bossStates.die:
+                yield return new WaitForSeconds(7f);
+
+                theBoss.gameObject.SetActive(false);
+
+                SoundManager.instance.StopBossSFX(2);
+
+                SoundManager.instance.PlayBossSFX(3);
+
                 gameObject.SetActive(false);
+
+                Instantiate(explosion, theBoss.position, Quaternion.identity);
+
+                TriggerBlock.gameObject.SetActive(true);
                 break;
         }
     }
@@ -177,16 +191,17 @@ public class BossTankController : MonoBehaviour
         Invoke("returnColor", 0.1f);
 
         hp--;
-        anim.SetTrigger("Hit");
 
         if (hp <= 0)
         {
+            stop = true;
+            anim.SetTrigger("Die");
+            SoundManager.instance.PlayBossSFX(2);
             currentState = bossStates.die;
         }
         else if (hp <= maxHp / 2 && !isBerserk)
         {
             Berserk();
-            
         }
     }
 
