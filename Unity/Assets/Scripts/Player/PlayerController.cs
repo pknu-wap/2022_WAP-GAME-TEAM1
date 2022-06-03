@@ -131,7 +131,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
     public void Bounce(float bounceForce)
     {
         theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);

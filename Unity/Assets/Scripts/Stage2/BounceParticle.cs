@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BounceParticle : MonoBehaviour
 {
-    [SerializeField] float bounceForce;
+    [SerializeField]
+    float bounceForce;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-                PlayerController.instance.Bounce();
+            //if (Input.GetKeyDown(KeyCode.LeftControl))
+                PlayerController.instance.Bounce(bounceForce);
         }
     }
 }
