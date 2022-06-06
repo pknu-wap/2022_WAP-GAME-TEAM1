@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void reGame()
     {
+        PlayerController.instance.blockSpeed = new Vector2(0,0);
         isDead = false;
         if (CheckPointManager.instance.lastSpawnMapName != CheckPointManager.instance.nowMapName)
         {
