@@ -12,12 +12,16 @@ public class Tram : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    //무빙블럭 위에 플레이어가 있으면 플레이어도 같이 이동
+    //트램 위에 플레이어가 있으면 플레이어 이동
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController.instance.blockSpeed = new Vector2(v2.x, 0);
+            PlayerController.instance.tramSpeed = new Vector2(v2.x, v2.y);
+        }
+        if (collision.CompareTag("DeleteBlock"))
+        {
+            Destroy(gameObject);
         }
 	}
 
@@ -25,11 +29,7 @@ public class Tram : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController.instance.blockSpeed = new Vector2(0,0);
-        }
-        if (collision.CompareTag("DeleteBlock"))
-        {
-            Destroy(gameObject);
+            PlayerController.instance.tramSpeed = new Vector2(0,0);
         }
     }
 }

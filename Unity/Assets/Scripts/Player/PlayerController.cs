@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public GameObject UIGameOver;
     //무빙블럭용
     public Vector2 blockSpeed;
+    //트램용
+    public Vector2 tramSpeed;
 
     [SerializeField]
     // 이동 속도
@@ -85,7 +87,9 @@ public class PlayerController : MonoBehaviour
             {
                 canDoubleJump = true;
                 theRB.velocity += blockSpeed;
+                // theRB.velocity += tramSpeed;
             }
+            theRB.velocity += tramSpeed;
 
             // 점프 관련 (Space로 점프)
             if (Input.GetKeyDown(KeyCode.Space))
