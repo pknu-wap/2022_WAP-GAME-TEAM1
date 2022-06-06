@@ -28,5 +28,9 @@ public class MovingBlock : MonoBehaviour
         {
             PlayerController.instance.blockSpeed = new Vector2(0,0);
         }
+        if (collision.CompareTag("DeleteBlock"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
