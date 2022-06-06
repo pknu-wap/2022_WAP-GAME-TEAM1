@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
             {
                 canDoubleJump = true;
                 theRB.velocity += blockSpeed;
-                // theRB.velocity += tramSpeed;
             }
             theRB.velocity += tramSpeed;
 

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4118119106841115148}
   - component: {fileID: 8442191170034561187}
-  - component: {fileID: 7058950695778488517}
+  - component: {fileID: -5551683445653819668}
   - component: {fileID: 6337199725860483287}
   - component: {fileID: 3167529868476533187}
   - component: {fileID: 7784745558599335120}
   m_Layer: 6
-  m_Name: Tram
+  m_Name: TramDisappear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -144014455013166516, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7058950695778488517
+--- !u!114 &-5551683445653819668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5841434522353388675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb9a09d452df7f4c84056b9d4494992, type: 3}
+  m_Script: {fileID: 11500000, guid: 316794d1f28aaf64aae2ca572157d968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   v2: {x: 0, y: 1}
