@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //죽음관련 컨트롤 죽음 변수는 GameManager에서 컨트롤
-            if (GameManager.instance.isDead)
+            if (isDead())
             {
                 SoundManager.instance.PlaySFX(1);
                 Instantiate(deadEffect, transform.position, Quaternion.identity);
@@ -129,6 +130,18 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("canDoubleJump", canDoubleJump);
         }
         
+    }
+
+    bool isDead()
+    {
+        try
+        {
+            return (GameManager.instance.isDead);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public void Bounce(float bounceForce)
