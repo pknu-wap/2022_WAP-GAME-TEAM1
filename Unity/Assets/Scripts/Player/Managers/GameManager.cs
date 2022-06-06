@@ -22,7 +22,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    //리스폰
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            {
+                reGame();
+            }
+    }
     public void Spawning()
     {
         SoundManager.instance.PlayBGM(SoundManager.instance.nowPlayingBGMIndex);
@@ -32,37 +38,34 @@ public class GameManager : MonoBehaviour
    
     public void StartDeadCo()
     {
-        StartCoroutine(DeadCo());
+        // StartCoroutine(DeadCo());
     }
 
-    public IEnumerator DeadCo()
+    // public IEnumerator DeadCo()
+    // {
+    //     while (true)
+    //     {
+    //         if (Input.GetKeyDown(KeyCode.R))
+    //         {
+    //             reGame();
+    //         }
+    //         yield return null;
+    //     }
+    // }
+
+    public void reGame()
     {
-        while (true)
+        isDead = false;
+        if (CheckPointManager.instance.lastSpawnMapName != CheckPointManager.instance.nowMapName)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                isDead = false;
-
-                // 마지막 체크 포인트가 다른 맵에 있을 경우
-                if (CheckPointManager.instance.lastSpawnMapName != CheckPointManager.instance.nowMapName)
-                {
-                    // 맵 이동을 위한 변수 초기화
-                    CheckPointManager.instance.nowMapName = CheckPointManager.instance.lastSpawnMapName;
-
-                    SceneManager.LoadScene(CheckPointManager.instance.lastSpawnMapName);
-                }
-
-                // 마지막 체크포인트가 같은 맵
-                else
-                {
-                    SceneManager.LoadScene(CheckPointManager.instance.nowMapName);
-                }
-                Spawning();
-                break;
-            }
-
-            yield return null;
+            CheckPointManager.instance.nowMapName = CheckPointManager.instance.lastSpawnMapName;
+            SceneManager.LoadScene(CheckPointManager.instance.lastSpawnMapName);
         }
+        else
+        {
+            SceneManager.LoadScene(CheckPointManager.instance.nowMapName);
+        }
+        Spawning();
     }
 
     public void newGame()
