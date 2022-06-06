@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3402183766137557922, guid: 4767de54230ae5c42afdfbda4af6e8fc, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3402183766137557924, guid: 4767de54230ae5c42afdfbda4af6e8fc, type: 3}
       propertyPath: m_RootOrder
       value: 8
