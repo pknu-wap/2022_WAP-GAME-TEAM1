@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEditor;
 
 [InitializeOnLoad]
-public class StartSetting : MonoBehaviour
+static class StartSetting
 {
-    static void SetResolution()
+    static void startSetting()
     {
         int setWidth = 1920;
         int setHeight = 1080;
         Screen.SetResolution(setWidth, setHeight, true);
+        Debug.Log("end setting");
     }
 }
