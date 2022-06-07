@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIGameOver: {fileID: 2470237194407722801, guid: 3366bd65b0b40ab4696a8a402a5491c3, type: 3}
   blockSpeed: {x: 0, y: 0}
+  tramSpeed: {x: 0, y: 0}
   moveSpeed: 5
   jumpForce: 8
   groundLayer:

@@ -42,6 +42,14 @@ public class TransferMap : MonoBehaviour
         {
             _transferMap = "Boss1";
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            _transferMap = "Map6";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            _transferMap = "Map7";
+        }
         if (Input.GetKeyDown(KeyCode.M))
         {
             GameManager.instance.isMapChanging = true;
