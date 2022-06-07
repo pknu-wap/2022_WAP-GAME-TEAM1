@@ -13,7 +13,7 @@ public class FallingPlatform : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.name.Equals("Player")){
-            rb.gravityScale = 1;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }
