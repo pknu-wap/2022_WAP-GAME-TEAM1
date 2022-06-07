@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransferMap : MonoBehaviour
 {
     public string transferMap;
+    //디버그용
     string _transferMap = "Map1";
 
     private void OnTriggerEnter2D(Collider2D collision)
