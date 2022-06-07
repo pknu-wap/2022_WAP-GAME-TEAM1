@@ -21,7 +21,7 @@ public class Elevator : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            rb.velocity = new Vector2(0,0);
+            rb.velocity = v2;
         }
     }
 }
