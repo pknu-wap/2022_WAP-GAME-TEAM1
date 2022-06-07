@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
             {
                 reGame();
             }
+        if (Input.GetKeyDown(KeyCode.S))
+            {
+                newGame();
+            }
     }
     public void Spawning()
     {
