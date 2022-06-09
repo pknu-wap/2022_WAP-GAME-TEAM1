@@ -44,7 +44,7 @@ public class TransferMap : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            _transferMap = "AfterBoss1";
+            _transferMap = "Map6";
         }
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
