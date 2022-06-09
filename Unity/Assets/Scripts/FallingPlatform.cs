@@ -9,15 +9,13 @@ public class FallingPlatform : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
     }
 
-    void Update()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-          //충돌 판정
-          
-          //충돌하면 Kinematic 꺼지기
-    }
-    void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.name.Equals("Player")){
+        if (collision.collider.CompareTag("Player"))
+        {
             gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+
         }
     }
 }

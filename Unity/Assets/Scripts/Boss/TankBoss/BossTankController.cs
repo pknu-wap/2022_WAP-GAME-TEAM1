@@ -55,7 +55,9 @@ public class BossTankController : MonoBehaviour
 
 
     void OnEnable()
-    { 
+    {
+        SoundManager.instance.PlayBGM(1);
+
         //오브젝트 풀링 셋팅
         for (int i = 0; i < bulletMaxCount; i++)
         {
@@ -181,6 +183,7 @@ public class BossTankController : MonoBehaviour
                 Instantiate(explosion, theBoss.position, Quaternion.identity);
 
                 TriggerBlock.gameObject.SetActive(true);
+                SoundManager.instance.StopBGM(SoundManager.instance.nowPlayingBGMIndex);
                 break;
         }
     }

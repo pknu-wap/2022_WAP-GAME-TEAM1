@@ -22,7 +22,7 @@ public class PlatformMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position=Vector2.MoveTowards(transform.position,platformPos.position,Time.deltaTime*MoveSpeed);
+        transform.position = Vector2.MoveTowards(transform.position, platformPos.position, Time.deltaTime * MoveSpeed);
 
         if(Vector2.Distance(transform.position,platformPos.position)<=0.05f)
         {
@@ -30,6 +30,20 @@ public class PlatformMove : MonoBehaviour
             else platformPos = endPos;
         }
     }
-   
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.transform.SetParent(null);
+        }
+    }
 }

@@ -23,9 +23,9 @@ public class MovingSpikeHead : MonoBehaviour
         }
 
         //위 아래로 움직이기
-        if(gameObject.transform.position.y >= 7.4f)
+        if(gameObject.transform.position.y >= 40f)
             speed = -0.08f;
-        else if(gameObject.transform.position.y <= 3.1f)
+        else if(gameObject.transform.position.y <= 35.5f)
             speed = 0.08f;
     }
 }

@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: -13.37, y: -4.5, z: 0}
+  lastCameraPosition: {x: 0.54, y: 0, z: -10}
   lastSpawnMapName: Map1
+  nowMapIndex: 0
   nowMapName: Map1
+  Map: {fileID: 0}
