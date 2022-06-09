@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class PlayerController : MonoBehaviour
@@ -59,8 +60,19 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    void GoTitle()
+    {
+        SceneManager.LoadScene("Title");
+        SoundManager.instance.StopBGM();
+    }
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GoTitle();
+        }
+
         if (CanMove)
         {
             theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRB.velocity.y);

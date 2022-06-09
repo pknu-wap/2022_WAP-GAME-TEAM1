@@ -39,6 +39,10 @@ public class SoundManager : MonoBehaviour
         nowPlayingBGMIndex = soundToPlay;
     }
 
+    public void StopBGM()
+    {
+        bgm[nowPlayingBGMIndex].Stop();
+    }
     public void PlaySFX(int soundToPlay)
     {
         soundEffects[soundToPlay].Stop();
