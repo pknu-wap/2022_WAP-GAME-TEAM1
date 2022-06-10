@@ -75,6 +75,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -532,6 +533,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tank_Big_Boss_4: 2812739022031303390
+      Tank_Big_Boss_16: 8354857632991458569
+      Tank_Big_Boss_2: 7320035299084124492
+      Tank_Big_Boss_10: 2016339365944293479
+      Tank_Big_Boss_15: -5352752944741009403
+      Tank_Big_Boss_6: 2991696355305895793
+      Tank_Big_Boss_11: 5890499178590544798
+      Tank_Big_Boss_5: -3700398515823559936
+      Tank_Big_Boss_3: 8464532481880345724
+      Tank_Big_Boss_7: 6179933693089181563
+      Tank_Big_Boss_9: -1992479113633294054
+      Tank_Big_Boss_0: 748716624845556738
+      Tank_Big_Boss_8: -5644508873981802630
+      Tank_Big_Boss_14: 1990110911816890283
+      Tank_Big_Boss_13: -2986621369028368863
+      Tank_Big_Boss_12: 8314619170461970230
+      Tank_Big_Boss_1: 8302702280561806372
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

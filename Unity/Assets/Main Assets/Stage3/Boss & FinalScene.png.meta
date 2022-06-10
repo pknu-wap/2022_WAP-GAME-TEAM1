@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -931,6 +932,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Boss & FinalScene_11: -3315136760345643200
+      Boss & FinalScene_0: -7369039191451686080
+      Boss & FinalScene_10: -875511229173188898
+      Boss & FinalScene_33: 7145657792526295209
+      Boss & FinalScene_14: -9026125652416124437
+      Boss & FinalScene_5: 3118478790496468225
+      Boss & FinalScene_2: -5870560289553336786
+      Boss & FinalScene_22: -3511411298160328498
+      Boss & FinalScene_25: 3396039275773962257
+      Boss & FinalScene_26: -7585757617650008930
+      Boss & FinalScene_24: 4073511856294503114
+      Boss & FinalScene_28: 6331682258628581564
+      Boss & FinalScene_1: -4172526024153840546
+      Boss & FinalScene_7: -6787191771391025635
+      Boss & FinalScene_6: 2712906543124982325
+      Boss & FinalScene_8: 6547905158252648970
+      Boss & FinalScene_34: -8462012702044879086
+      Boss & FinalScene_35: 2688981355718806146
+      Boss & FinalScene_17: -1230928713017294610
+      Boss & FinalScene_23: 5509921432936424047
+      Boss & FinalScene_32: -4975691130870830355
+      Boss & FinalScene_4: -1558136366845900413
+      Boss & FinalScene_30: 2214885675636795582
+      Boss & FinalScene_31: 8548415518454144196
+      Boss & FinalScene_3: 4112394413023914968
+      Boss & FinalScene_15: 6852354735402302189
+      Boss & FinalScene_12: 8995806506207147827
+      Boss & FinalScene_36: -3724158679269296991
+      Boss & FinalScene_13: -7087670568947375166
+      Boss & FinalScene_16: -1311818867148184151
+      Boss & FinalScene_9: -5921325803285688072
+      Boss & FinalScene_18: -3853390951681072995
+      Boss & FinalScene_19: -3072196851936508463
+      Boss & FinalScene_21: 3528526428382214499
+      Boss & FinalScene_20: -1905069125583611053
+      Boss & FinalScene_27: -3655518311685677835
+      Boss & FinalScene_29: 3284550426271474375
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

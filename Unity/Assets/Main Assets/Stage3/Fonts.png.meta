@@ -135,6 +135,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1012,6 +1013,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Fonts_19: 6183660812861860997
+      Fonts_9: 5531210485939664077
+      Fonts_13: -4370656036225540506
+      Fonts_18: -7203192410608601991
+      Fonts_20: 7443194639410999854
+      Fonts_21: -8065020774104472268
+      Fonts_15: 1328298109344761830
+      Fonts_22: 2341466435061352707
+      Fonts_2: 2620802893379179477
+      Fonts_7: -440930401676677050
+      Fonts_3: -5061953701764281481
+      Fonts_14: 4105822725837066495
+      Fonts_12: 440835124691154768
+      Fonts_23: 8121845407722883421
+      Fonts_27: -4522712534001208068
+      Fonts_5: -2576748560111565444
+      Fonts_30: 7852402424361498394
+      Fonts_10: 4976518362074419590
+      Fonts_25: 2643613914687006431
+      Fonts_8: -8625500836051421968
+      Fonts_36: 2461978437745419563
+      Fonts_0: 3610785533523063487
+      Fonts_29: -4311727409018542676
+      Fonts_16: 6882156014769993718
+      Fonts_11: 3270646782390477943
+      Fonts_31: 5879553023245782810
+      Fonts_6: 2908928366939834473
+      Fonts_1: 3209314132451299974
+      Fonts_28: -5172648974522698673
+      Fonts_24: 1867360475309092671
+      Fonts_34: -228176027816615359
+      Fonts_26: 1990552760179204368
+      Fonts_32: 1944774627663113233
+      Fonts_4: 5750844297842498214
+      Fonts_33: 8595187979034574421
+      Fonts_35: -5289132548358957574
+      Fonts_17: -7962157851695586313
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
