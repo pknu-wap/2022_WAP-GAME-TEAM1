@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool isDead;
     public bool isMapChanging = false;
 
+    [SerializeField] GameObject _Player;
+
     private void Awake()
     {
         if (instance == null)

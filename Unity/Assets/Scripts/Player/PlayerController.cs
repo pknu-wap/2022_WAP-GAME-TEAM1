@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         
     }
@@ -87,6 +87,12 @@ public class PlayerController : MonoBehaviour
         //죽음관련 컨트롤 죽음 변수는 GameManager에서 컨트롤
         if (GameManager.instance.isDead && !isInvincible)
         {
+            if (transform.parent != null)
+            {
+                transform.SetParent(null);
+                DontDestroyOnLoad(gameObject);
+            }
+            
             SoundManager.instance.PlaySFX(1);
             Instantiate(deadEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);

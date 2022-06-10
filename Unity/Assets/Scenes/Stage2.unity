@@ -7376,72 +7376,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 635827426997845482, guid: c57a57e0b96071041bda7c6f7eb9debe, type: 3}
   m_PrefabInstance: {fileID: 2117924817}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &315977029
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 682203110}
-    m_Modifications:
-    - target: {fileID: 5650053050664991540, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: nowMapIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650053050664991543, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-      propertyPath: m_Name
-      value: CheckPoint (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c1e58e61212817a48b1a89129313a293, type: 3}
---- !u!4 &315977030 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5650053050664991541, guid: c1e58e61212817a48b1a89129313a293, type: 3}
-  m_PrefabInstance: {fileID: 315977029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &318611305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 635827426997845482, guid: c57a57e0b96071041bda7c6f7eb9debe, type: 3}
@@ -8835,7 +8769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609f169209f2214892fcbef61bffc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeCameraPosition: {x: 28.5, y: 0, z: -10}
+  beforeCameraPosition: {x: 29.5, y: 0, z: -10}
   afterCameraPosition: {x: 58.5, y: 0, z: -10}
   beforeMap: {fileID: 682203109}
   afterMap: {fileID: 873403201}
@@ -10808,7 +10742,6 @@ Transform:
   - {fileID: 839663992}
   - {fileID: 1638350685}
   - {fileID: 1647923910}
-  - {fileID: 315977030}
   m_Father: {fileID: 1858356888}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15009,7 +14942,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3996948166018406920, guid: 382f1b866cdf73148bc89c1df75aee20, type: 3}
       propertyPath: bounceForce
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3996948166018406921, guid: 382f1b866cdf73148bc89c1df75aee20, type: 3}
       propertyPath: m_RootOrder
@@ -22520,7 +22453,7 @@ MonoBehaviour:
   deathEffect: {fileID: 2245136296448419048, guid: b67837a889f4d854abec02012491dc10, type: 3}
   transferMap: {fileID: 263254448}
   moveSpeed: {x: 10, y: 15}
-  rushSpeed: 30
+  rushSpeed: 45
   rushCount: 3
   rotSpeed: 5
   bullet: {fileID: 2287885211204213323, guid: 375bc57a430045142b4a44a34e484055, type: 3}
