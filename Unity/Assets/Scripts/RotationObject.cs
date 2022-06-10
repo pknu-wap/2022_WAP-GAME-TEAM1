@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class RotationObject : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
-
+    public float rotationSpeed;
     
     void Update()
     {
-        
+        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
     }
 }

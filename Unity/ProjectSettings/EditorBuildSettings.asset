@@ -9,24 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 2f7b699f4eb24854782f987d1e04c2c9
   - enabled: 1
-    path: Assets/Scenes/Map1.unity
+    path: Assets/Scenes/Stage1.unity
     guid: de462285ba3f00c4292d7a0b35d3fb02
   - enabled: 1
-    path: Assets/Scenes/Map2.unity
-    guid: 7972d516c7467124cb6e85e2887402a4
-  - enabled: 1
-    path: Assets/Scenes/Map3.unity
-    guid: 02ac5d9ce772c44468c5fee843151a81
-  - enabled: 1
-    path: Assets/Scenes/Map4.unity
-    guid: 8667c4b9fbb3948c8a0f334091e7730b
-  - enabled: 1
-    path: Assets/Scenes/Boss1.unity
-    guid: 71df94ec08e81154ba4f0d9614549e1c
-  - enabled: 0
-    path: Assets/Scenes/Boss1_backup.unity
+    path: Assets/Scenes/Stage1(Boss).unity
     guid: e4ed083199680e94b92cb620f1f7dc48
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Channel1.unity
+    guid: c24c78e2775fc334bbb60de5ead6bbfd
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 7ba90145c0a0f0c40b8709256bbb96c4
+  - enabled: 1
+    path: Assets/Scenes/Channel2.unity
+    guid: 0e45957c694401b4f8b6df961f846573
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 2d8a26b1b2737e04da390080cdaaf5c2
+  - enabled: 1
+    path: Assets/Scenes/Stage3Boss.unity
+    guid: 291ed63a378292d4daf603c7a81bfb3b
+  - enabled: 1
+    path: Assets/Scenes/Channel3.unity
+    guid: 7e847fed9b95a2442a22d22fd4648ebc
   m_configObjects: {}

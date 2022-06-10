@@ -14,10 +14,7 @@ public class NewGame : MonoBehaviour
     public void loadGame()
     {
         SLManager.instance.Load();
-    }
 
-    void OnMouseDown() {
-        newGame();
     }
 
 }

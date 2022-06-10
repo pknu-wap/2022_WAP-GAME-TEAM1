@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class MovingSpikeHead : MonoBehaviour
 {
-    float spd = 0.04f;
-    float speed;
+    float speed = 0.08f;
     float moveSpan = 0.01f;
     float moveDelta = 0;
 
     void Start()
     {
-        speed=spd;
+        
     }
 
     void Update()
@@ -24,9 +23,9 @@ public class MovingSpikeHead : MonoBehaviour
         }
 
         //위 아래로 움직이기
-        if(gameObject.transform.position.y >= 7.4f)
-            speed = -spd;
-        else if(gameObject.transform.position.y <= 3.1f)
-            speed = spd;
+        if(gameObject.transform.position.y >= 40f)
+            speed = -0.08f;
+        else if(gameObject.transform.position.y <= 35.5f)
+            speed = 0.08f;
     }
 }
