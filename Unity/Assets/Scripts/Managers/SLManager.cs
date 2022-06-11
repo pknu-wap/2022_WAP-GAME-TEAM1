@@ -41,16 +41,25 @@ public class SLManager : MonoBehaviour
         }
     }
 
-    //¼¼ÀÌºê
+    //ï¿½ï¿½ï¿½Ìºï¿½
     public void Save()
     {
-        _playerData = new PlayerData(CheckPointManager.instance.spawnPoint, CheckPointManager.instance.lastCameraPosition, CheckPointManager.instance.lastSpawnMapName, SoundManager.instance.nowPlayingBGMIndex
-            , CheckPointManager.instance.nowMapIndex);
-        string jdata = JsonConvert.SerializeObject(_playerData);
+        var settings = new JsonSerializerSettings
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+        };
+
+        _playerData = new PlayerData(CheckPointManager.instance.spawnPoint,
+                            CheckPointManager.instance.lastCameraPosition,
+                            CheckPointManager.instance.lastSpawnMapName,
+                            SoundManager.instance.nowPlayingBGMIndex,
+                            CheckPointManager.instance.nowMapIndex);
+                            
+        string jdata = JsonConvert.SerializeObject(_playerData, settings);
         File.WriteAllText(Application.dataPath + "/gameData.json", jdata);
     }
 
-    // ·Îµå 
+    // ï¿½Îµï¿½ 
     public void Load()
     {
         string jdata = File.ReadAllText(Application.dataPath + "/gameData.json");
